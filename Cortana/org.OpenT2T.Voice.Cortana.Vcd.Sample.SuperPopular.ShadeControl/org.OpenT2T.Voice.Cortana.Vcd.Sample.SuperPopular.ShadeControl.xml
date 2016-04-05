@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="ThingsAppCommandSet_en-us">
+    <CommandPrefix>Shades</CommandPrefix>
+    <Example>Open the shades</Example>
+    <Command Name="closeShades">
+      <Example>Close the shades</Example>
+      <ListenFor RequireAppName="ExplicitlySpecified">[Would] [you] [please] close [the] {builtin:AppName} [please]</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">The {builtin:AppName} are too high</ListenFor>
+      <Feedback>Closing the shades</Feedback>
+      <VoiceCommandService Target="ThingsLanguageService" />
+    </Command>
+    <Command Name="openShades">
+      <Example>Open the shades</Example>
+      <ListenFor RequireAppName="ExplicitlySpecified">[Would] [you] [please] open [the] {builtin:AppName} [please]</ListenFor>nFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">[The] {builtin:AppName} are too low</ListenFor>
+      <Feedback>Opening the shades</Feedback>
+      <VoiceCommandService Target="ThingsLanguageService" />
+    </Command>
+  </CommandSet>
+</VoiceCommands>

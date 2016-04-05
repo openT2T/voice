@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="ThingsAppCommandSet_en-us">
+    <CommandPrefix>Temperature</CommandPrefix>
+    <Example>What is the temperature</Example>
+    <Command Name="queryTemperature">
+      <Example>What is the temperature</Example>
+      <ListenFor RequireAppName="ExplicitlySpecified">{Question} [is] {Pronoun} {builtin:AppName} [please]</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">[Would] [you] [please] tell me {Pronoun} {builtin:AppName} [please]</ListenFor>
+      <Feedback>Checking the current temperature</Feedback>
+      <VoiceCommandService Target="ThingsLanguageService" />
+    </Command>
+    <Command Name="queryTrend">
+      <Example>How has the temperature been</Example>
+      <ListenFor RequireAppName="ExplicitlySpecified">{Question} [is] {Pronoun} {builtin:AppName} history [please]</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">[Would] [you] [please] tell me {Pronoun} {builtin:AppName} history [please]</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">The {builtin:AppName} feels {HotCold}</ListenFor>
+      <Feedback>Checking the temperature history</Feedback>
+      <VoiceCommandService Target="ThingsLanguageService" />
+    </Command>
+    <PhraseList Label="Question">
+      <Item>how</Item>
+      <Item>what</Item>
+      <Item>why</Item>
+      <Item>how</Item>
+      <Item>when</Item>
+      <Item>where</Item>
+    </PhraseList>
+    <PhraseList Label="Pronoun">
+      <Item>the</Item>
+      <Item>my</Item>
+      <Item>our</Item>
+    </PhraseList>
+    <PhraseList Label="HotCold">
+      <Item>hot</Item>
+      <Item>hotter</Item>
+      <Item>warm</Item>
+      <Item>warmer</Item>
+      <Item>cold</Item>
+      <Item>colder</Item>
+      <Item>freezing</Item>
+    </PhraseList>
+  </CommandSet>
+</VoiceCommands>

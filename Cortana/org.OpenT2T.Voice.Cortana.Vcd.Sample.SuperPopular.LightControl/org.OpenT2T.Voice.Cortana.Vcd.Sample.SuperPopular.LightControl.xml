@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="ThingsAppCommandSet_en-us">
+    <CommandPrefix>Lights</CommandPrefix>
+    <Example>Turn off the lights.</Example>
+    <Command Name="setLightsOn">
+      <Example>Turn off the lights</Example>
+      <ListenFor RequireAppName="ExplicitlySpecified">[Would] [you] [please] turn on [the] {builtin:AppName} [please]</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">[Would] [you] [please] turn [the] {builtin:AppName} on [please]</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">The {builtin:AppName} are too dark</ListenFor>
+      <Feedback>Turning on the lights</Feedback>
+      <VoiceCommandService Target="ThingsLanguageService" />
+    </Command>
+    <Command Name="setLightsOff">
+      <Example>Turn off the lights</Example>
+      <ListenFor RequireAppName="ExplicitlySpecified">[Would] [you] [please] turn off [the] {builtin:AppName} [please]</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">[Would] [you] [please] turn [the] {builtin:AppName} off [please]</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">[The] {builtin:AppName} are too bright</ListenFor>
+      <Feedback>Turning off the lights</Feedback>
+      <VoiceCommandService Target="ThingsLanguageService" />
+    </Command>
+  </CommandSet>
+</VoiceCommands>
